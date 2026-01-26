@@ -2,7 +2,8 @@
 
 import * as p from "@clack/prompts";
 import pc from "picocolors";
-import { readFile, writeFile } from "node:fs/promises";
+import { readFile, writeFile, mkdir } from "node:fs/promises";
+import { AI_CONFIGS, type AIProvider } from "./ai-configs";
 
 async function main() {
   console.log();
@@ -26,6 +27,17 @@ async function main() {
             { value: "dark", label: "Dark", hint: "recommended" },
             { value: "light", label: "Light" },
             { value: "system", label: "System", hint: "follows OS preference" },
+          ],
+        }),
+      aiAssistant: () =>
+        p.select({
+          message: "Which AI assistant do you use?",
+          options: [
+            { value: "claude", label: "Claude Code", hint: "Anthropic" },
+            { value: "cursor", label: "Cursor", hint: "AI-first editor" },
+            { value: "copilot", label: "GitHub Copilot" },
+            { value: "windsurf", label: "Windsurf", hint: "Codeium" },
+            { value: "none", label: "None", hint: "skip AI config" },
           ],
         }),
     },
@@ -64,6 +76,26 @@ async function main() {
     s.stop(`Theme set to ${config.theme}`);
   } catch {
     s.stop("Error configuring theme");
+  }
+
+  // Generate AI config
+  if (config.aiAssistant !== "none") {
+    s.start(`Generating ${config.aiAssistant} config...`);
+    try {
+      const aiConfig = AI_CONFIGS[config.aiAssistant as AIProvider];
+      const content = aiConfig.content("landing");
+
+      // Create directory if needed (for copilot)
+      if (aiConfig.filename.includes("/")) {
+        const dir = aiConfig.filename.split("/").slice(0, -1).join("/");
+        await mkdir(dir, { recursive: true });
+      }
+
+      await writeFile(aiConfig.filename, content);
+      s.stop(`${aiConfig.filename} created`);
+    } catch {
+      s.stop("Error generating AI config");
+    }
   }
 
   p.outro(pc.green("Setup complete!"));
