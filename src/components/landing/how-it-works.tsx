@@ -1,6 +1,6 @@
 "use client";
 
-import { Download, Palette, Rocket, Copy, Check } from "lucide-react";
+import { Download, Palette, Rocket, Check } from "lucide-react";
 import { useState } from "react";
 
 const steps = [
@@ -82,24 +82,23 @@ export function HowItWorks() {
                       {step.description}
                     </p>
 
-                    {/* Command with copy button */}
-                    <div className="mt-3 group/code relative rounded-lg border border-border bg-muted/50 p-2.5 hover:border-primary/50 transition-colors">
-                      <code className="text-xs font-mono text-foreground flex items-center justify-between gap-2">
-                        <span className="flex items-center gap-2 flex-1 min-w-0">
-                          <span className="text-primary flex-shrink-0">$</span>
-                          <span className="break-all">{step.command}</span>
-                        </span>
-                        <button
-                          onClick={() => handleCopy(step.command, index)}
-                          className="flex-shrink-0 flex items-center gap-1 text-muted-foreground hover:text-foreground transition-colors opacity-0 group-hover/code:opacity-100"
-                          aria-label="Copy command"
-                        >
-                          {copiedIndex === index ? (
+                    {/* Command - click to copy */}
+                    <div
+                      onClick={() => handleCopy(step.command, index)}
+                      className="mt-3 rounded-lg border border-border bg-muted/50 p-2.5 hover:border-primary transition-colors cursor-pointer"
+                    >
+                      <code className="text-xs font-mono text-foreground flex items-center justify-center gap-2">
+                        {copiedIndex === index ? (
+                          <>
                             <Check className="h-3.5 w-3.5 text-primary" />
-                          ) : (
-                            <Copy className="h-3.5 w-3.5" />
-                          )}
-                        </button>
+                            <span>Copied!</span>
+                          </>
+                        ) : (
+                          <>
+                            <span className="text-primary">$</span>
+                            <span className="break-all">{step.command}</span>
+                          </>
+                        )}
                       </code>
                     </div>
                   </div>

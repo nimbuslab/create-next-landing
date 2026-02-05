@@ -23,7 +23,11 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "create-next-landing | Build stunning landing pages in minutes",
+  metadataBase: new URL("https://github.com/nimbuslab/create-next-landing"),
+  title: {
+    default: "create-next-landing | Build stunning landing pages in minutes",
+    template: "%s | create-next-landing",
+  },
   description:
     "The fastest way to launch your next project. Built with Next.js 16, React 19, Tailwind CSS 4, and shadcn/ui. Production-ready, type-safe, and beautiful.",
   keywords: [
@@ -40,6 +44,18 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "nimbuslab", url: "https://nimbuslab.com.br" }],
   creator: "nimbuslab",
+  publisher: "nimbuslab",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -55,6 +71,10 @@ export const metadata: Metadata = {
     description:
       "The fastest way to launch your next project. Production-ready, type-safe, and beautiful.",
     creator: "@nimbuslab",
+    site: "@nimbuslab",
+  },
+  alternates: {
+    canonical: "https://github.com/nimbuslab/create-next-landing",
   },
 };
 

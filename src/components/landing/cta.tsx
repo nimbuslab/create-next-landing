@@ -1,7 +1,19 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Github, Star } from "lucide-react";
+import { ArrowRight, Github, Star, Check } from "lucide-react";
+import { useState } from "react";
 
 export function CTA() {
+  const [copied, setCopied] = useState(false);
+  const command = "bunx create-next-landing my-app";
+
+  const handleCopy = () => {
+    navigator.clipboard.writeText(command);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
   return (
     <section className="container mx-auto px-4 py-24 lg:py-32" id="cta">
       <div className="relative overflow-hidden rounded-2xl border border-border bg-muted/50 px-6 py-16 text-center sm:px-12 sm:py-24">
@@ -41,10 +53,22 @@ export function CTA() {
 
           {/* Command */}
           <div className="mx-auto max-w-xl">
-            <div className="rounded-lg border border-border bg-background p-4">
+            <div
+              onClick={handleCopy}
+              className="rounded-lg border border-border bg-background p-4 cursor-pointer hover:border-primary transition-colors group"
+            >
               <code className="text-sm font-mono text-foreground flex items-center justify-center gap-2">
-                <span className="text-primary">$</span>
-                <span className="font-semibold">bunx create-next-landing my-app</span>
+                {copied ? (
+                  <>
+                    <Check className="h-4 w-4 text-primary" />
+                    <span className="font-semibold">Copied!</span>
+                  </>
+                ) : (
+                  <>
+                    <span className="text-primary">$</span>
+                    <span className="font-semibold">{command}</span>
+                  </>
+                )}
               </code>
             </div>
           </div>

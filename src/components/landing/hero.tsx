@@ -1,7 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Terminal, Copy, Check } from "lucide-react";
+import { ArrowRight, Terminal, Check } from "lucide-react";
 import { useState } from "react";
 
 export function Hero() {
@@ -57,28 +57,24 @@ export function Hero() {
             </Button>
           </div>
 
-          {/* Command line with copy button */}
+          {/* Command line - click to copy */}
           <div className="mx-auto max-w-xl">
-            <div className="group relative rounded-lg border border-border bg-muted/30 p-4 transition-all hover:border-primary">
-              <code className="text-sm font-mono text-foreground flex items-center justify-between gap-4">
-                <span className="flex items-center gap-2">
-                  <span className="text-primary">$</span>
-                  <span>{command}</span>
-                </span>
-                <button
-                  onClick={handleCopy}
-                  className="flex items-center gap-1.5 text-muted-foreground hover:text-foreground transition-colors"
-                  aria-label="Copy command"
-                >
-                  {copied ? (
-                    <>
-                      <Check className="h-4 w-4 text-primary" />
-                      <span className="text-xs">Copied!</span>
-                    </>
-                  ) : (
-                    <Copy className="h-4 w-4" />
-                  )}
-                </button>
+            <div
+              onClick={handleCopy}
+              className="group relative rounded-lg border border-border bg-muted/30 p-4 transition-all hover:border-primary cursor-pointer"
+            >
+              <code className="text-sm font-mono text-foreground flex items-center justify-center gap-2">
+                {copied ? (
+                  <>
+                    <Check className="h-4 w-4 text-primary" />
+                    <span>Copied!</span>
+                  </>
+                ) : (
+                  <>
+                    <span className="text-primary">$</span>
+                    <span>{command}</span>
+                  </>
+                )}
               </code>
             </div>
           </div>
