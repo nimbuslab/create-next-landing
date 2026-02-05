@@ -1,12 +1,29 @@
-import { Hero, Features, CTA, Footer } from "@/components/landing";
+import {
+  Header,
+  Hero,
+  Features,
+  HowItWorks,
+  Showcase,
+  TechStack,
+  FAQ,
+  CTA,
+  Footer,
+} from "@/components/landing";
 
 export default function Home() {
   return (
-    <main className="min-h-screen">
-      <Hero />
-      <Features />
-      <CTA />
-      <Footer />
-    </main>
+    <>
+      <Header />
+      <main className="min-h-screen">
+        <Hero />
+        <Features />
+        <HowItWorks />
+        <Showcase />
+        <TechStack />
+        <FAQ />
+        <CTA />
+        <Footer />
+      </main>
+    </>
   );
 }

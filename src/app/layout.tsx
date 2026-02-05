@@ -23,24 +23,38 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Landing Page | Built with create-next-landing",
+  title: "create-next-landing | Build stunning landing pages in minutes",
   description:
-    "A modern landing page built with Next.js 16, React 19, Tailwind CSS 4, and shadcn/ui.",
-  keywords: ["landing page", "nextjs", "react", "tailwind", "shadcn"],
+    "The fastest way to launch your next project. Built with Next.js 16, React 19, Tailwind CSS 4, and shadcn/ui. Production-ready, type-safe, and beautiful.",
+  keywords: [
+    "landing page",
+    "nextjs",
+    "next.js 16",
+    "react 19",
+    "tailwind css 4",
+    "shadcn/ui",
+    "template",
+    "starter",
+    "typescript",
+    "nimbuslab",
+  ],
   authors: [{ name: "nimbuslab", url: "https://nimbuslab.com.br" }],
+  creator: "nimbuslab",
   openGraph: {
     type: "website",
     locale: "en_US",
-    title: "Landing Page | Built with create-next-landing",
+    title: "create-next-landing | Build stunning landing pages in minutes",
     description:
-      "A modern landing page built with Next.js 16, React 19, Tailwind CSS 4, and shadcn/ui.",
-    siteName: "Your Site Name",
+      "The fastest way to launch your next project. Built with Next.js 16, React 19, Tailwind CSS 4, and shadcn/ui.",
+    siteName: "create-next-landing",
+    url: "https://github.com/nimbuslab/create-next-landing",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Landing Page | Built with create-next-landing",
+    title: "create-next-landing | Build stunning landing pages in minutes",
     description:
-      "A modern landing page built with Next.js 16, React 19, Tailwind CSS 4, and shadcn/ui.",
+      "The fastest way to launch your next project. Production-ready, type-safe, and beautiful.",
+    creator: "@nimbuslab",
   },
 };
 

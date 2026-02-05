@@ -1,27 +1,55 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Github, Star } from "lucide-react";
 
 export function CTA() {
   return (
-    <section className="container mx-auto px-4 py-24">
-      <div className="relative overflow-hidden rounded-3xl bg-primary px-6 py-16 text-center sm:px-12 sm:py-24">
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#fff1_1px,transparent_1px),linear-gradient(to_bottom,#fff1_1px,transparent_1px)] bg-[size:24px_24px]" />
-
+    <section className="container mx-auto px-4 py-24 lg:py-32" id="cta">
+      <div className="relative overflow-hidden rounded-2xl border border-border bg-muted/50 px-6 py-16 text-center sm:px-12 sm:py-24">
         <div className="relative">
-          <h2 className="mb-4 text-3xl font-bold tracking-tight text-primary-foreground sm:text-4xl">
-            Ready to get started?
+          <h2 className="mb-4 font-heading text-3xl font-bold tracking-tight sm:text-5xl">
+            Start building now
           </h2>
-          <p className="mx-auto mb-8 max-w-xl text-lg text-primary-foreground/80">
-            Create your landing page in minutes. No design skills required.
+          <p className="mx-auto mb-10 max-w-2xl text-lg text-muted-foreground sm:text-xl">
+            Create your next landing page in minutes, not days. Production-ready code,
+            modern design, and zero configuration. Let&apos;s ship something amazing.
           </p>
-          <Button
-            size="lg"
-            variant="secondary"
-            className="gap-2"
-          >
-            Start Building
-            <ArrowRight className="h-4 w-4" />
-          </Button>
+
+          {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
+            <Button
+              size="lg"
+              className="gap-2 rounded-full"
+            >
+              Get Started
+              <ArrowRight className="h-4 w-4" />
+            </Button>
+            <Button
+              size="lg"
+              variant="outline"
+              className="gap-2 rounded-full"
+            >
+              <Github className="h-4 w-4" />
+              View on GitHub
+            </Button>
+          </div>
+
+          {/* Command */}
+          <div className="mx-auto max-w-xl">
+            <div className="rounded-lg border border-border bg-background p-4">
+              <code className="text-sm font-mono text-foreground flex items-center justify-center gap-2">
+                <span className="text-primary">$</span>
+                <span className="font-semibold">bunx create-next-landing my-app</span>
+              </code>
+            </div>
+          </div>
+
+          {/* Social proof */}
+          <div className="mt-8 flex items-center justify-center gap-2 text-sm text-muted-foreground">
+            <Star className="h-4 w-4 fill-primary stroke-primary" />
+            <span>Free and open source</span>
+            <span className="mx-2">•</span>
+            <span>MIT License</span>
+          </div>
         </div>
       </div>
     </section>

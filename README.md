@@ -73,11 +73,21 @@ src/
 │   └── globals.css         # Global styles + CSS variables
 ├── components/
 │   ├── landing/            # Landing page sections
+│   │   ├── header.tsx      # Navigation header (sticky)
 │   │   ├── hero.tsx        # Hero section
-│   │   ├── features.tsx    # Features grid
+│   │   ├── features.tsx    # Features grid (6 items)
+│   │   ├── how-it-works.tsx # 3-step process
+│   │   ├── showcase.tsx    # Project examples (4 cards)
+│   │   ├── tech-stack.tsx  # Technologies used
+│   │   ├── faq.tsx         # FAQ accordion (8 questions)
 │   │   ├── cta.tsx         # Call to action
-│   │   └── footer.tsx      # Footer
-│   └── ui/                 # shadcn/ui components
+│   │   └── footer.tsx      # Footer with links
+│   ├── ui/                 # shadcn/ui components
+│   │   ├── button.tsx      # Button component
+│   │   ├── card.tsx        # Card component
+│   │   └── badge.tsx       # Badge component
+│   └── theme-provider.tsx  # Dark mode provider
+│   └── theme-toggle.tsx    # Theme switcher
 └── lib/
     └── utils.ts            # Utility functions (cn, etc)
 ```
@@ -117,12 +127,17 @@ Edit `src/app/globals.css` to customize:
 ### Landing Sections
 
 Components in `src/components/landing/`:
-- **hero.tsx** - Main headline, subheading, CTA
-- **features.tsx** - Feature grid with icons
-- **cta.tsx** - Call-to-action section
-- **footer.tsx** - Footer with links
+- **header.tsx** - Sticky navigation with theme toggle and mobile menu
+- **hero.tsx** - Main headline, gradient text, CTA buttons, command snippet
+- **features.tsx** - 6 feature cards showcasing tech stack (Next.js, React, Tailwind, etc)
+- **how-it-works.tsx** - 3-step process with icons and commands
+- **showcase.tsx** - 4 example projects with images and categories
+- **tech-stack.tsx** - Technologies organized by category with badges
+- **faq.tsx** - 8 frequently asked questions with accordion
+- **cta.tsx** - Final call-to-action with gradient background
+- **footer.tsx** - Footer with brand, links, and social icons
 
-Each section is independent and easy to customize or remove.
+Each section is independent and easy to customize or remove. All components are fully responsive and support dark mode.
 
 ### Metadata & SEO
 
