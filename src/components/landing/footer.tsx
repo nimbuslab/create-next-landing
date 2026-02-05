@@ -38,7 +38,7 @@ export function Footer() {
                 href="https://github.com/nimbuslab/create-next-landing"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex h-9 w-9 items-center justify-center rounded-lg border bg-background hover:bg-muted transition-colors"
+                className="flex h-9 w-9 items-center justify-center rounded-lg border bg-background hover:bg-muted hover:border-primary transition-colors"
                 aria-label="GitHub"
               >
                 <Github className="h-4 w-4" />
@@ -47,7 +47,7 @@ export function Footer() {
                 href="https://twitter.com/nimbuslab"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex h-9 w-9 items-center justify-center rounded-lg border bg-background hover:bg-muted transition-colors"
+                className="flex h-9 w-9 items-center justify-center rounded-lg border bg-background hover:bg-muted hover:border-primary transition-colors"
                 aria-label="Twitter"
               >
                 <Twitter className="h-4 w-4" />
@@ -58,31 +58,31 @@ export function Footer() {
           {/* Links */}
           <div className="grid gap-8 sm:grid-cols-3">
             <div>
-              <h3 className="font-semibold mb-3 text-sm">Product</h3>
+              <h3 className="font-semibold mb-3 text-sm font-heading">Product</h3>
               <nav className="flex flex-col gap-2 text-sm text-muted-foreground">
-                <a href="#features" className="hover:text-foreground transition-colors">
+                <a href="#features" className="hover:text-primary transition-colors">
                   Features
                 </a>
-                <a href="#how-it-works" className="hover:text-foreground transition-colors">
+                <a href="#how-it-works" className="hover:text-primary transition-colors">
                   How it Works
                 </a>
-                <a href="#showcase" className="hover:text-foreground transition-colors">
+                <a href="#showcase" className="hover:text-primary transition-colors">
                   Showcase
                 </a>
-                <a href="#tech-stack" className="hover:text-foreground transition-colors">
+                <a href="#tech-stack" className="hover:text-primary transition-colors">
                   Tech Stack
                 </a>
               </nav>
             </div>
 
             <div>
-              <h3 className="font-semibold mb-3 text-sm">Resources</h3>
+              <h3 className="font-semibold mb-3 text-sm font-heading">Resources</h3>
               <nav className="flex flex-col gap-2 text-sm text-muted-foreground">
                 <a
                   href="https://github.com/nimbuslab/create-next-landing"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-foreground transition-colors"
+                  className="hover:text-primary transition-colors"
                 >
                   Documentation
                 </a>
@@ -90,7 +90,7 @@ export function Footer() {
                   href="https://github.com/nimbuslab/create-next-landing/issues"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-foreground transition-colors"
+                  className="hover:text-primary transition-colors"
                 >
                   Support
                 </a>
@@ -98,7 +98,7 @@ export function Footer() {
                   href="https://github.com/nimbuslab/create-next-landing/releases"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-foreground transition-colors"
+                  className="hover:text-primary transition-colors"
                 >
                   Changelog
                 </a>
@@ -106,13 +106,13 @@ export function Footer() {
             </div>
 
             <div>
-              <h3 className="font-semibold mb-3 text-sm">Company</h3>
+              <h3 className="font-semibold mb-3 text-sm font-heading">Company</h3>
               <nav className="flex flex-col gap-2 text-sm text-muted-foreground">
                 <a
                   href="https://nimbuslab.com.br"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-foreground transition-colors"
+                  className="hover:text-primary transition-colors"
                 >
                   About nimbuslab
                 </a>
@@ -120,7 +120,7 @@ export function Footer() {
                   href="https://github.com/nimbuslab"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-foreground transition-colors"
+                  className="hover:text-primary transition-colors"
                 >
                   GitHub
                 </a>
