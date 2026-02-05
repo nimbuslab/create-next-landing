@@ -1,4 +1,5 @@
 import { Github, Twitter } from "lucide-react";
+import Image from "next/image";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -10,9 +11,12 @@ export function Footer() {
           {/* Brand and description */}
           <div className="max-w-md">
             <div className="flex items-center gap-2 mb-4">
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary shadow-sm">
-                <span className="text-lg font-bold text-primary-foreground font-heading">N</span>
-              </div>
+              <Image
+                src="/nimbuslab-symbol.svg"
+                alt="nimbuslab"
+                width={36}
+                height={36}
+              />
               <span className="font-heading text-xl font-bold">create-next-landing</span>
             </div>
             <p className="text-sm text-muted-foreground leading-relaxed mb-6">

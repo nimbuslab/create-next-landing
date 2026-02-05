@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Github, Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { ThemeToggle } from "@/components/theme-toggle";
+import Image from "next/image";
 
 const navigation = [
   { name: "Features", href: "#features" },
@@ -39,9 +40,13 @@ export function Header() {
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <a href="#" className="flex items-center gap-2 group">
-            <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-primary shadow-sm group-hover:shadow-md group-hover:scale-105 transition-all">
-              <span className="text-base font-bold text-primary-foreground font-heading">N</span>
-            </div>
+            <Image
+              src="/nimbuslab-symbol.svg"
+              alt="nimbuslab"
+              width={32}
+              height={32}
+              className="group-hover:scale-105 transition-transform"
+            />
             <span className="font-heading text-lg font-bold hidden sm:inline-block">
               create-next-landing
             </span>
@@ -77,9 +82,11 @@ export function Header() {
               )}
             </Button>
 
-            <Button variant="outline" size="sm" className="gap-2 hidden sm:inline-flex">
-              <Github className="h-4 w-4" />
-              <span className="hidden lg:inline">GitHub</span>
+            <Button variant="outline" size="sm" className="gap-2 hidden sm:inline-flex" asChild>
+              <a href="https://github.com/nimbuslab/create-next-landing" target="_blank" rel="noopener noreferrer">
+                <Github className="h-4 w-4" />
+                <span className="hidden lg:inline">GitHub</span>
+              </a>
             </Button>
           </div>
         </div>
@@ -99,9 +106,11 @@ export function Header() {
                 </a>
               ))}
               <div className="pt-3 border-t">
-                <Button variant="outline" size="sm" className="w-full gap-2">
-                  <Github className="h-4 w-4" />
-                  View on GitHub
+                <Button variant="outline" size="sm" className="w-full gap-2" asChild>
+                  <a href="https://github.com/nimbuslab/create-next-landing" target="_blank" rel="noopener noreferrer">
+                    <Github className="h-4 w-4" />
+                    View on GitHub
+                  </a>
                 </Button>
               </div>
             </nav>

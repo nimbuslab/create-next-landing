@@ -43,13 +43,17 @@ export function Hero() {
 
           {/* CTA Buttons */}
           <div className="flex flex-col justify-center gap-4 sm:flex-row mb-12">
-            <Button size="lg" className="gap-2 rounded-full">
-              Get Started
-              <ArrowRight className="h-4 w-4" />
+            <Button size="lg" className="gap-2" asChild>
+              <a href="#how-it-works">
+                Get Started
+                <ArrowRight className="h-4 w-4" />
+              </a>
             </Button>
-            <Button size="lg" variant="outline" className="gap-2 rounded-full">
-              <Terminal className="h-4 w-4" />
-              View on GitHub
+            <Button size="lg" variant="outline" className="gap-2" asChild>
+              <a href="https://github.com/nimbuslab/create-next-landing" target="_blank" rel="noopener noreferrer">
+                <Terminal className="h-4 w-4" />
+                View on GitHub
+              </a>
             </Button>
           </div>
 

@@ -18,18 +18,24 @@ export function CTA() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
             <Button
               size="lg"
-              className="gap-2 rounded-full"
+              className="gap-2"
+              asChild
             >
-              Get Started
-              <ArrowRight className="h-4 w-4" />
+              <a href="#how-it-works">
+                Get Started
+                <ArrowRight className="h-4 w-4" />
+              </a>
             </Button>
             <Button
               size="lg"
               variant="outline"
-              className="gap-2 rounded-full"
+              className="gap-2"
+              asChild
             >
-              <Github className="h-4 w-4" />
-              View on GitHub
+              <a href="https://github.com/nimbuslab/create-next-landing" target="_blank" rel="noopener noreferrer">
+                <Github className="h-4 w-4" />
+                View on GitHub
+              </a>
             </Button>
           </div>
 

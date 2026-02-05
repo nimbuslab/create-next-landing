@@ -6,25 +6,25 @@ const showcaseItems = [
   {
     title: "SaaS Platform",
     description: "Complete dashboard with authentication, billing, and analytics",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=90",
     category: "B2B",
   },
   {
     title: "E-commerce Store",
     description: "Modern shop with product catalog, cart, and checkout flow",
-    image: "https://images.unsplash.com/photo-1557821552-17105176677c?w=800&q=80",
+    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1200&q=90",
     category: "Retail",
   },
   {
     title: "Marketing Agency",
     description: "Portfolio showcase with case studies and contact forms",
-    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80",
+    image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=1200&q=90",
     category: "Services",
   },
   {
     title: "Mobile App Landing",
     description: "App promotion with features, testimonials, and download CTAs",
-    image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&q=80",
+    image: "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=1200&q=90",
     category: "Product",
   },
 ];
@@ -49,7 +49,7 @@ export function Showcase() {
         {showcaseItems.map((item) => (
           <Card
             key={item.title}
-            className="group relative overflow-hidden border border-border bg-card transition-all hover:border-primary hover:scale-[1.02] cursor-pointer"
+            className="group relative overflow-hidden border border-border bg-card transition-all hover:border-primary hover:scale-[1.02] cursor-pointer p-0"
           >
             {/* Image */}
             <div className="relative aspect-video overflow-hidden bg-muted">
@@ -57,6 +57,7 @@ export function Showcase() {
                 src={item.image}
                 alt={item.title}
                 fill
+                sizes="(max-width: 768px) 100vw, 50vw"
                 className="object-cover transition-transform duration-500 group-hover:scale-105"
               />
 
