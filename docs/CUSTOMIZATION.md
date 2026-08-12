@@ -513,11 +513,11 @@ All Tailwind utilities work with `dark:` prefix.
 
 ## Need Help?
 
-- 📖 [shadcn/ui docs](https://ui.shadcn.com)
-- 🎨 [Tailwind CSS docs](https://tailwindcss.com)
-- ⚡ [Next.js docs](https://nextjs.org/docs)
-- 💬 [Open an issue](https://github.com/nimbuslab/create-next-landing/issues)
+- [shadcn/ui docs](https://ui.shadcn.com)
+- [Tailwind CSS docs](https://tailwindcss.com)
+- [Next.js docs](https://nextjs.org/docs)
+- [Open an issue](https://github.com/nimbuslab/create-next-landing/issues)
 
 ---
 
-**Tip:** Make small changes and test often. Use `bun dev` for instant feedback.
+**Tip:** Make small changes and test often. Use `bun run dev` for instant feedback.
