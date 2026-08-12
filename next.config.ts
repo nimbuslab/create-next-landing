@@ -1,6 +1,8 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  // Gera .next/standalone com um servidor autocontido, usado pelo Dockerfile.
+  output: "standalone",
   images: {
     remotePatterns: [
       {
