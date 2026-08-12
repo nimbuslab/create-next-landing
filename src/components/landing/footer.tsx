@@ -135,7 +135,7 @@ export function Footer() {
             © {currentYear} nimbuslab. Released under MIT License.
           </p>
           <p className="text-sm text-muted-foreground">
-            Built with ❤️ using{" "}
+            Built with{" "}
             <span className="text-foreground font-medium">create-next-landing</span>
           </p>
         </div>

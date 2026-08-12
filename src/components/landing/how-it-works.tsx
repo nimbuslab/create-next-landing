@@ -9,14 +9,14 @@ const steps = [
     step: "01",
     title: "Install",
     description: "Create your project with a single command. No complex setup required.",
-    command: "bunx create-next-landing my-app",
+    command: "bunx degit nimbuslab/create-next-landing my-app",
   },
   {
     icon: Palette,
     step: "02",
     title: "Customize",
     description: "Edit components, adjust colors, and make it yours. Everything is editable.",
-    command: "cd my-app && bun dev",
+    command: "cd my-app && bun install && bun run dev",
   },
   {
     icon: Rocket,

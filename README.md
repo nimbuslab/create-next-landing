@@ -1,192 +1,196 @@
+<div align="center">
+
 # create-next-landing
 
-> Production-ready Next.js landing page template with AI-friendly documentation and modern best practices.
+**Template de landing page em Next.js 16, com App Router e Server Components.**
+React 19, Tailwind CSS 4, shadcn/ui e setup interativo que gera documentação para assistentes de IA.
 
-Build stunning landing pages with the latest web technologies. Optimized for performance, SEO, and AI coding assistants.
+[Read in English](./docs/README.md)
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/nimbuslab/create-next-landing)
+[![license](https://img.shields.io/github/license/nimbuslab/create-next-landing?color=FF5500)](./LICENSE)
+[![Next.js](https://img.shields.io/badge/Next.js-16.3-FF5500)](https://nextjs.org)
+[![React](https://img.shields.io/badge/React-19.2-FF5500)](https://react.dev)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4-FF5500)](https://tailwindcss.com)
 
-[Leia em Português](./docs/README.pt-BR.md)
+[Instalação](#instalação) · [Quick start](#quick-start) · [Estrutura](#estrutura-do-projeto) · [Deploy](#deploy) · [Roadmap](#roadmap)
 
-## Features
+</div>
 
-✨ **Modern Stack** - Next.js 16, React 19, Tailwind CSS 4, shadcn/ui
-🎨 **Beautiful UI** - Pre-built sections with dark mode support
-🤖 **AI-Ready** - Auto-generated documentation for Claude Code, Cursor, GitHub Copilot
-⚡ **Fast** - Server Components, Turbopack, optimized assets
-📱 **Responsive** - Mobile-first design, works everywhere
-🔍 **SEO Optimized** - Metadata, sitemap, performance
+---
 
-## Quick Start
+## Por que create-next-landing
 
-### Using nimbuslab CLI (Recommended)
+- **Nove seções prontas**: header fixo, hero, features, how it works, showcase, tech stack, FAQ, CTA e footer, todas responsivas e com dark mode
+- **Server Components por padrão**: `"use client"` só nas seções com interação (header, hero, how it works, FAQ e CTA) e nos componentes de tema; features, showcase, tech stack e footer são Server Components
+- **Tailwind CSS 4 nativo**: configuração CSS-first em `src/app/globals.css`, sem `tailwind.config.ts`
+- **shadcn/ui no estilo new-york**: Button, Card e Badge já instalados, prontos para receber o resto do catálogo
+- **Setup interativo**: `bun run setup` renomeia o projeto, define o tema padrão e gera o arquivo de contexto do seu assistente de IA
+- **Docker testado**: `output: "standalone"` no `next.config.ts` e um `Dockerfile` multi-stage na raiz que sobe e responde
+- **CI incluída**: typecheck, lint e build em todo pull request
 
-The easiest way with interactive setup:
+## Instalação
+
+### Com a CLI da nimbuslab
+
+O caminho mais completo, com setup interativo e documentação para IA:
 
 ```bash
-npx @nimbuslab/cli create my-landing --landing
-cd my-landing
-bun dev
+bunx @nimbuslab/cli create minha-landing --landing
+cd minha-landing
+bun run dev
 ```
 
-This will:
-- Clone the template
-- Set up AI-friendly documentation (AGENTS.md, llms.txt)
-- Configure services (email, analytics) interactively
-- Generate .env files
-- Initialize Git with proper branch flow
+A CLI clona o template, configura serviços de forma interativa, gera os arquivos
+de contexto para assistentes de IA (`AGENTS.md`, `CLAUDE.md`, `llms.txt`,
+`ARCHITECTURE.md`, `EXAMPLES.md`, `.cursorrules` e
+`.github/copilot-instructions.md`) e inicializa o Git.
 
-### Manual Setup
+### Clonando o template direto
 
 ```bash
-# Clone template
-bunx degit nimbuslab/create-next-landing my-landing
-cd my-landing
-
-# Install dependencies
+bunx degit nimbuslab/create-next-landing minha-landing
+cd minha-landing
 bun install
-
-# Start development
-bun dev
+bun run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) to see your landing page.
+Abra [http://localhost:3000](http://localhost:3000).
+
+> O pacote `@nimbuslab/create-next-landing` não está publicado no npm. Os dois
+> caminhos acima são os que funcionam hoje.
+
+## Quick start
+
+Depois de instalar, rode o setup interativo:
+
+```bash
+bun run setup
+```
+
+Ele pergunta o nome do projeto, o tema padrão (`dark`, `light` ou `system`) e
+qual assistente de IA você usa. Em seguida:
+
+- reescreve o campo `name` do `package.json`;
+- troca o `defaultTheme` em `src/app/layout.tsx`;
+- gera `CLAUDE.md`, `.cursorrules`, `.windsurfrules` ou
+  `.github/copilot-instructions.md`, conforme a sua resposta.
+
+Para editar o conteúdo da página, comece por `src/components/landing/hero.tsx` e
+siga a ordem de composição em `src/app/page.tsx`.
 
 ## Stack
 
-| Technology | Version | Purpose |
-|------------|---------|---------|
-| **Next.js** | 16 | App Router, Server Components, Turbopack |
-| **React** | 19 | Latest features and performance |
-| **Tailwind CSS** | 4 | Utility-first CSS with CSS-first config |
-| **shadcn/ui** | Latest | Accessible, customizable components |
-| **TypeScript** | 5.7 | Full type safety (strict mode) |
-| **Bun** | 1.0+ | Fast runtime and package manager |
+| Tecnologia | Versão | Papel |
+|---|---|---|
+| [Next.js](https://nextjs.org) | `16.3` | App Router, Server Components, Turbopack |
+| [React](https://react.dev) | `19.2` | Biblioteca de interface |
+| [TypeScript](https://www.typescriptlang.org) | `5.9` | Tipagem estática em modo strict |
+| [Tailwind CSS](https://tailwindcss.com) | `4.1` | Estilização com configuração CSS-first |
+| [shadcn/ui](https://ui.shadcn.com) | `new-york` | Componentes acessíveis sobre Radix UI |
+| [next-themes](https://github.com/pacocoursey/next-themes) | `0.4` | Dark mode com `dark` como padrão |
+| [Lucide](https://lucide.dev) | `0.563` | Ícones |
+| [ESLint](https://eslint.org) | `9` | Análise estática |
+| [Bun](https://bun.sh) | `1.3+` | Runtime e gerenciador de pacotes |
 
-## Project Structure
+Node 20.9 ou superior é o mínimo exigido pelo Next 16.
+
+## Estrutura do projeto
 
 ```
-src/
-├── app/
-│   ├── layout.tsx          # Root layout with metadata
-│   ├── page.tsx            # Homepage
-│   └── globals.css         # Global styles + CSS variables
-├── components/
-│   ├── landing/            # Landing page sections
-│   │   ├── header.tsx      # Navigation header (sticky)
-│   │   ├── hero.tsx        # Hero section
-│   │   ├── features.tsx    # Features grid (6 items)
-│   │   ├── how-it-works.tsx # 3-step process
-│   │   ├── showcase.tsx    # Project examples (4 cards)
-│   │   ├── tech-stack.tsx  # Technologies used
-│   │   ├── faq.tsx         # FAQ accordion (8 questions)
-│   │   ├── cta.tsx         # Call to action
-│   │   └── footer.tsx      # Footer with links
-│   ├── ui/                 # shadcn/ui components
-│   │   ├── button.tsx      # Button component
-│   │   ├── card.tsx        # Card component
-│   │   └── badge.tsx       # Badge component
-│   └── theme-provider.tsx  # Dark mode provider
-│   └── theme-toggle.tsx    # Theme switcher
-└── lib/
-    └── utils.ts            # Utility functions (cn, etc)
+.
+├── .github/workflows/ci.yml     # Typecheck, lint e build
+├── Dockerfile                   # Build multi-stage com saída standalone
+├── docs/
+│   ├── README.md                # Este README em inglês
+│   ├── COMPONENTS.md            # Referência dos componentes
+│   └── CUSTOMIZATION.md         # Guia de personalização
+├── scripts/
+│   ├── setup.ts                 # Wizard de setup interativo
+│   └── ai-configs.ts            # Modelos de configuração para IA
+└── src/
+    ├── app/
+    │   ├── layout.tsx           # Layout raiz, fontes e metadados
+    │   ├── page.tsx             # Composição da página
+    │   ├── globals.css          # Tokens de design e estilos globais
+    │   └── icon.svg             # Favicon
+    ├── components/
+    │   ├── landing/
+    │   │   ├── header.tsx       # Navegação fixa com menu mobile
+    │   │   ├── hero.tsx         # Headline, CTAs e snippet copiável
+    │   │   ├── features.tsx     # Seis cards de recurso
+    │   │   ├── how-it-works.tsx # Processo em três passos
+    │   │   ├── showcase.tsx     # Quatro projetos de exemplo
+    │   │   ├── tech-stack.tsx   # Tecnologias em badges
+    │   │   ├── faq.tsx          # Oito perguntas em acordeão
+    │   │   ├── cta.tsx          # Chamada final
+    │   │   ├── footer.tsx       # Rodapé com links e redes
+    │   │   └── index.ts         # Barrel file das seções
+    │   ├── ui/                  # Componentes shadcn/ui
+    │   │   ├── button.tsx
+    │   │   ├── card.tsx
+    │   │   └── badge.tsx
+    │   ├── theme-provider.tsx   # Provider do next-themes
+    │   └── theme-toggle.tsx     # Alternador de tema
+    └── lib/
+        └── utils.ts             # Utilitários, incluindo cn()
 ```
 
-## Available Scripts
+## Scripts disponíveis
 
 ```bash
-bun dev         # Start development with Turbopack (fast HMR)
-bun build       # Build for production
-bun start       # Start production server
-bun lint        # Run ESLint
-bun typecheck   # Run TypeScript compiler check
+bun run dev        # Servidor de desenvolvimento com Turbopack
+bun run build      # Build de produção
+bun run start      # Servidor de produção
+bun run lint       # Verifica com ESLint, sem alterar arquivos
+bun run lint:fix   # Corrige o que o ESLint conseguir corrigir
+bun run typecheck  # Verifica os tipos com tsc --noEmit
+bun run setup      # Setup interativo do projeto
 ```
 
-## Adding Components
+Use sempre `bun run <script>`. No bun 1.3, `bun build` chama o bundler nativo e
+falha com `error: Missing entrypoints`, ignorando o script do `package.json`.
 
-Use shadcn/ui to add more components:
+## Adicionando componentes
+
+O template já traz Button, Card e Badge. Para o resto do catálogo:
 
 ```bash
-bunx --bun shadcn@latest add button
-bunx --bun shadcn@latest add card
 bunx --bun shadcn@latest add form
+bunx --bun shadcn@latest add dialog
+bunx --bun shadcn@latest add accordion
 ```
 
-Browse all components: [ui.shadcn.com/docs/components](https://ui.shadcn.com/docs/components)
+Catálogo completo em [ui.shadcn.com/docs/components](https://ui.shadcn.com/docs/components).
 
-## Customization
+## Personalização
 
-### Theme & Colors
+### Tema e cores
 
-Edit `src/app/globals.css` to customize:
-- Colors (CSS variables)
-- Border radius
-- Fonts
-- Shadows
+Os tokens de design ficam em `src/app/globals.css`, como variáveis CSS: cores,
+raio de borda, fontes e sombras. O tema padrão é definido em
+`src/app/layout.tsx`, na prop `defaultTheme` do `ThemeProvider`.
 
-### Landing Sections
+### Seções
 
-Components in `src/components/landing/`:
-- **header.tsx** - Sticky navigation with theme toggle and mobile menu
-- **hero.tsx** - Main headline, gradient text, CTA buttons, command snippet
-- **features.tsx** - 6 feature cards showcasing tech stack (Next.js, React, Tailwind, etc)
-- **how-it-works.tsx** - 3-step process with icons and commands
-- **showcase.tsx** - 4 example projects with images and categories
-- **tech-stack.tsx** - Technologies organized by category with badges
-- **faq.tsx** - 8 frequently asked questions with accordion
-- **cta.tsx** - Final call-to-action with gradient background
-- **footer.tsx** - Footer with brand, links, and social icons
+Cada seção em `src/components/landing/` é independente. Para remover uma, apague
+o arquivo, tire o export de `index.ts` e o uso de `src/app/page.tsx`.
 
-Each section is independent and easy to customize or remove. All components are fully responsive and support dark mode.
+### Metadados e SEO
 
-### Metadata & SEO
+Atualize o objeto `metadata` em `src/app/layout.tsx`, incluindo `metadataBase`,
+`openGraph` e `alternates.canonical`, que hoje apontam para o repositório do
+template.
 
-Update in `src/app/layout.tsx`:
-```typescript
-export const metadata: Metadata = {
-  title: 'Your Product Name',
-  description: 'Your product description',
-  // ... more SEO fields
-}
-```
+Detalhes em [docs/CUSTOMIZATION.md](./docs/CUSTOMIZATION.md) e a referência de
+cada componente em [docs/COMPONENTS.md](./docs/COMPONENTS.md).
 
-## AI-Friendly Documentation
+## Deploy
 
-When created via `@nimbuslab/cli`, your project includes:
-
-- **AGENTS.md** - Context for Claude Code, Cursor, GitHub Copilot
-- **llms.txt** - LLM indexing (ChatGPT, Perplexity)
-- **ARCHITECTURE.md** - Design decisions explained
-- **EXAMPLES.md** - Common tasks with code
-- **.cursorrules** - Cursor AI instructions
-- **.github/copilot-instructions.md** - GitHub Copilot context
-
-These files help AI assistants understand your project better, leading to more accurate suggestions.
-
-## Performance
-
-Optimized for Core Web Vitals:
-
-- ✅ **Server Components** - Less JavaScript, faster load
-- ✅ **Automatic code splitting** - Per route/component
-- ✅ **Image optimization** - next/image with WebP/AVIF
-- ✅ **Font optimization** - next/font with preloading
-- ✅ **CSS optimization** - Tailwind CSS 4 purge
-
-Target metrics:
-- Lighthouse Performance: 95+
-- LCP: < 2.0s
-- CLS: < 0.05
-
-## Deployment
-
-### Vercel (Recommended)
-
-One-click deploy:
+### Vercel
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/nimbuslab/create-next-landing)
 
-Or via CLI:
+Ou pela linha de comando:
 
 ```bash
 bunx vercel
@@ -194,83 +198,65 @@ bunx vercel
 
 ### Docker
 
-```dockerfile
-FROM oven/bun:1 AS builder
-WORKDIR /app
-COPY package.json bun.lock* ./
-RUN bun install --frozen-lockfile
-COPY . .
-RUN bun run build
-
-FROM oven/bun:1-slim
-WORKDIR /app
-COPY --from=builder /app/.next/standalone ./
-COPY --from=builder /app/.next/static ./.next/static
-COPY --from=builder /app/public ./public
-EXPOSE 3000
-CMD ["bun", "server.js"]
-```
-
-Build and run:
+O `Dockerfile` da raiz faz o build em multi-stage e serve a saída standalone do
+Next:
 
 ```bash
-docker build -t my-landing .
-docker run -p 3000:3000 my-landing
+docker build -t minha-landing .
+docker run -p 3000:3000 minha-landing
 ```
 
-### Other Platforms
+As dependências são instaladas com bun; o build e o runtime usam node, porque o
+`next build` termina em `SIGILL` sob o runtime do bun dentro do container.
 
-This template works with:
-- Vercel
-- Netlify
-- Railway
-- Dokploy
-- Any platform supporting Next.js
+### Outras plataformas
 
-## Examples
+Qualquer plataforma que rode Next.js serve, entre elas Netlify, Railway, Dokploy
+e Coolify.
 
-Sites built with this template:
+## Roadmap
 
-- Coming soon!
+- [x] Nove seções de landing page com dark mode
+- [x] Setup interativo com geração de contexto para assistentes de IA
+- [x] Saída standalone e Dockerfile validado
+- [x] CI com typecheck, lint e build
+- [ ] Demo pública hospedada, para virar a homepage do repositório
+- [ ] Versões em português de `docs/COMPONENTS.md` e `docs/CUSTOMIZATION.md`
+- [ ] Imagens próprias no showcase, no lugar das fotos remotas do Unsplash
+- [ ] Verificação automatizada de acessibilidade na CI
 
-Want to add yours? [Open a PR](https://github.com/nimbuslab/create-next-landing/pulls)
+## Perguntas frequentes
 
-## FAQ
+**Dá para usar npm ou pnpm no lugar do Bun?**
+Sim. Troque `bun run` pelo comando equivalente. O template é testado com Bun.
 
-**Q: Can I use npm/pnpm instead of Bun?**
-A: Yes, but Bun is faster. Replace `bun` with `npm` or `pnpm` in commands.
+**Preciso da CLI da nimbuslab?**
+Não. O `bunx degit` entrega o mesmo template. A CLI acrescenta a configuração
+interativa de serviços e os arquivos de contexto para IA.
 
-**Q: Do I need to use the nimbuslab CLI?**
-A: No, but it sets up AI docs and services automatically. Manual setup works fine too.
+**Dá para remover seções que eu não uso?**
+Sim. Cada seção é um componente independente, sem dependência entre elas.
 
-**Q: Can I remove sections I don't need?**
-A: Absolutely! Each section is independent. Just delete the component and import.
+**As imagens do showcase são minhas?**
+Não. `src/components/landing/showcase.tsx` usa fotos remotas do Unsplash,
+liberadas em `next.config.ts` via `images.remotePatterns`. Troque pelas suas
+antes de publicar.
 
-**Q: Is this production-ready?**
-A: Yes! It follows Next.js and React best practices. Used in production by nimbuslab.
+## Contribuindo
 
-## Contributing
+Leia o [CONTRIBUTING.md](./CONTRIBUTING.md): fluxo de branches, padrão de commits
+em português e a sequência de verificação que a CI executa.
 
-Contributions welcome! Please:
-1. Fork the repo
-2. Create a feature branch
-3. Make your changes
-4. Submit a PR
+Para reportar bugs, abra uma
+[issue](https://github.com/nimbuslab/create-next-landing/issues).
+Para vulnerabilidades, siga o [SECURITY.md](./SECURITY.md).
 
-See [CONTRIBUTING.md](./CONTRIBUTING.md) for guidelines.
+## Licença
 
-## Support
+[MIT](./LICENSE) © [nimbuslab](https://nimbuslab.com.br)
 
-- 📖 [Documentation](https://github.com/nimbuslab/create-next-landing)
-- 🐛 [Issues](https://github.com/nimbuslab/create-next-landing/issues)
-- 💬 [Discussions](https://github.com/nimbuslab/create-next-landing/discussions)
+<div align="center">
 
-## License
+Construído em Brasília, DF, Brasil
 
-MIT License - see [LICENSE](./LICENSE) for details.
-
----
-
-**Created by nimbuslab** - Building digital products with design and technology.
-
-Made with care in Brazil 🇧🇷
+</div>

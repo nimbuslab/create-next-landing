@@ -11,7 +11,7 @@ Modern landing page template with Next.js 16, React 19, Tailwind CSS 4, and shad
 
 \`\`\`bash
 bun install
-bun dev      # Start development server
+bun run dev      # Start development server
 \`\`\`
 
 ## Stack
@@ -32,8 +32,10 @@ src/
 │   ├── page.tsx
 │   └── globals.css
 ├── components/
-│   ├── ui/
-│   └── theme-provider.tsx
+│   ├── landing/            # Landing page sections
+│   ├── ui/                 # shadcn/ui components
+│   ├── theme-provider.tsx
+│   └── theme-toggle.tsx
 └── lib/
     └── utils.ts
 \`\`\`
@@ -43,6 +45,16 @@ src/
 \`\`\`bash
 bunx --bun shadcn@latest add button
 bunx --bun shadcn@latest add card
+\`\`\`
+
+## Scripts
+
+\`\`\`bash
+bun run dev        # Development server with Turbopack
+bun run build      # Production build
+bun run start      # Production server
+bun run lint       # ESLint check
+bun run typecheck  # TypeScript compiler check
 \`\`\`
 
 ## Conventions
@@ -88,9 +100,10 @@ You are an expert in Next.js 16, React 19, TypeScript, Tailwind CSS 4, and shadc
 - Utilities in src/lib/
 
 ## Commands
-- bun dev - Start development
-- bun build - Production build
-- bun lint - Run ESLint
+- bun run dev - Start development
+- bun run build - Production build
+- bun run lint - Run ESLint
+- bun run typecheck - Run TypeScript compiler check
 
 ## Preferences
 - Dark mode first design
@@ -159,9 +172,10 @@ Structure:
 - src/lib/ - Utilities
 
 Commands:
-- bun dev
-- bun build
-- bun lint
+- bun run dev
+- bun run build
+- bun run lint
+- bun run typecheck
 `,
   },
 };
