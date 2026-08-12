@@ -15,8 +15,6 @@ const technologies = [
   { name: "Prettier", category: "Formatting" },
 ];
 
-const categories = ["Framework", "Library", "Language", "Styling", "Components", "Primitives"];
-
 export function TechStack() {
   return (
     <section className="py-24 lg:py-32" id="tech-stack">
