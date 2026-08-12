@@ -18,32 +18,32 @@ const faqs = [
   {
     question: "Can I use this for commercial projects?",
     answer:
-      "Absolutely! The template is released under the MIT license. Use it for personal projects, client work, SaaS products, or anything else. No attribution required, though we'd love a shoutout if you're feeling generous.",
+      "Yes. The template is released under the MIT license. Use it for personal projects, client work, SaaS products, or anything else. No attribution required.",
   },
   {
     question: "Is it mobile-responsive?",
     answer:
-      "100%. Every component is built mobile-first and fully responsive. The design looks great on all devices from phones to ultra-wide monitors. We've tested on real devices to ensure a smooth experience everywhere.",
+      "Every section is built mobile-first with Tailwind breakpoints, including the header menu, the showcase grid and the FAQ accordion. Resize the window or open it on your phone to check before you commit to it.",
   },
   {
     question: "How do I customize the colors and styling?",
     answer:
-      "Super easy. Just edit the CSS variables in globals.css to change your brand colors. All components use these design tokens, so changes are reflected everywhere instantly. You can also customize Tailwind config for more advanced styling.",
+      "Edit the CSS variables in src/app/globals.css. All components read those design tokens, so a change lands everywhere at once. Tailwind CSS 4 is configured CSS-first, so there is no tailwind.config.ts to edit.",
   },
   {
     question: "What's the difference between this and other templates?",
     answer:
-      "We use the absolute latest versions of everything (Next.js 16, React 19, Tailwind 4), not outdated packages. The code is clean, well-organized, and production-ready. No bloat, no unnecessary dependencies, just what you need to ship fast.",
+      "It tracks the current major versions of Next.js, React and Tailwind, and CI runs typecheck, lint and build on every pull request. Nine sections ship ready, with no dependency beyond the ones listed in package.json.",
   },
   {
     question: "Can I get support if I'm stuck?",
     answer:
-      "Yep! Open an issue on GitHub and we'll help you out. The community is also friendly and responsive. We're constantly improving the template based on feedback.",
+      "Open an issue on GitHub. Security reports go to the private channel described in SECURITY.md instead, so they are not disclosed before a fix ships.",
   },
   {
     question: "How often is this updated?",
     answer:
-      "We keep dependencies up-to-date and add new features regularly. When Next.js, React, or Tailwind release major updates, we update the template to match. You'll always have access to the latest version.",
+      "There is no release schedule. Dependency and security fixes land on main and reach you the next time you create a project. Check CHANGELOG.md for what changed and run bun audit on your own project.",
   },
 ];
 
