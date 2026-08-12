@@ -109,7 +109,8 @@ docs: documenta o script de setup interativo
 - [ ] Documentação atualizada quando o comportamento muda
 
 Todo comando escrito no README precisa existir de fato. Se o seu PR muda um
-script, atualize `README.md` e `README.en.md` no mesmo PR.
+script, atualize o `README.md` da raiz e a versão em inglês em `docs/README.md`
+no mesmo PR.
 
 ## Licença
 
