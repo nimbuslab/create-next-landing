@@ -12,7 +12,6 @@ const technologies = [
   { name: "Bun", category: "Runtime" },
   { name: "Turbopack", category: "Bundler" },
   { name: "ESLint", category: "Linting" },
-  { name: "Prettier", category: "Formatting" },
 ];
 
 export function TechStack() {
