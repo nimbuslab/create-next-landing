@@ -1,37 +1,80 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Comfortaa, Inter, JetBrains_Mono } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+// nimbuslab branding fonts
+const comfortaa = Comfortaa({
+  variable: "--font-comfortaa",
   subsets: ["latin"],
+  display: "swap",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
+  display: "swap",
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  variable: "--font-jetbrains-mono",
+  subsets: ["latin"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "Landing Page | Built with create-next-landing",
+  metadataBase: new URL("https://github.com/nimbuslab/create-next-landing"),
+  title: {
+    default: "create-next-landing | Build stunning landing pages in minutes",
+    template: "%s | create-next-landing",
+  },
   description:
-    "A modern landing page built with Next.js 16, React 19, Tailwind CSS 4, and shadcn/ui.",
-  keywords: ["landing page", "nextjs", "react", "tailwind", "shadcn"],
+    "The fastest way to launch your next project. Built with Next.js 16, React 19, Tailwind CSS 4, and shadcn/ui. Production-ready, type-safe, and beautiful.",
+  keywords: [
+    "landing page",
+    "nextjs",
+    "next.js 16",
+    "react 19",
+    "tailwind css 4",
+    "shadcn/ui",
+    "template",
+    "starter",
+    "typescript",
+    "nimbuslab",
+  ],
   authors: [{ name: "nimbuslab", url: "https://nimbuslab.com.br" }],
+  creator: "nimbuslab",
+  publisher: "nimbuslab",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
   openGraph: {
     type: "website",
     locale: "en_US",
-    title: "Landing Page | Built with create-next-landing",
+    title: "create-next-landing | Build stunning landing pages in minutes",
     description:
-      "A modern landing page built with Next.js 16, React 19, Tailwind CSS 4, and shadcn/ui.",
-    siteName: "Your Site Name",
+      "The fastest way to launch your next project. Built with Next.js 16, React 19, Tailwind CSS 4, and shadcn/ui.",
+    siteName: "create-next-landing",
+    url: "https://github.com/nimbuslab/create-next-landing",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Landing Page | Built with create-next-landing",
+    title: "create-next-landing | Build stunning landing pages in minutes",
     description:
-      "A modern landing page built with Next.js 16, React 19, Tailwind CSS 4, and shadcn/ui.",
+      "The fastest way to launch your next project. Production-ready, type-safe, and beautiful.",
+    creator: "@nimbuslab",
+    site: "@nimbuslab",
+  },
+  alternates: {
+    canonical: "https://github.com/nimbuslab/create-next-landing",
   },
 };
 
@@ -43,7 +86,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased`}
+        className={`${inter.variable} ${comfortaa.variable} ${jetbrainsMono.variable} font-sans antialiased`}
         suppressHydrationWarning
       >
         <ThemeProvider
