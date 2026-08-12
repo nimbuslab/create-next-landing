@@ -71,9 +71,9 @@ Replace the "N" logo in multiple places:
 
 Update in multiple files:
 
-1. **Header** - Line 37
-2. **Footer** - Line 19
-3. **Metadata** - `src/app/layout.tsx` lines 26-44
+1. **Header** - `src/components/landing/header.tsx`
+2. **Footer** - `src/components/landing/footer.tsx`
+3. **Metadata** - the `metadata` object in `src/app/layout.tsx`
 
 Global search and replace: `create-next-landing` → `Your Product Name`
 
@@ -136,14 +136,14 @@ Edit `src/components/landing/hero.tsx`:
 <Button>Get Started</Button>
 
 // Command line
-<span>bunx create-next-landing my-app</span>
+<span>bunx degit nimbuslab/create-next-landing my-app</span>
 ```
 
 ### Features
 
 Edit `src/components/landing/features.tsx`:
 
-Update the `features` array (lines 4-37):
+Update the `features` array:
 
 ```tsx
 const features = [
@@ -163,7 +163,7 @@ Icons from [lucide.dev](https://lucide.dev)
 
 Edit `src/components/landing/how-it-works.tsx`:
 
-Update the `steps` array (lines 4-24):
+Update the `steps` array:
 
 ```tsx
 const steps = [
@@ -182,7 +182,7 @@ const steps = [
 
 Edit `src/components/landing/showcase.tsx`:
 
-Update `showcaseItems` array (lines 6-33):
+Update the `showcaseItems` array:
 
 ```tsx
 const showcaseItems = [
@@ -205,7 +205,7 @@ const showcaseItems = [
 
 Edit `src/components/landing/tech-stack.tsx`:
 
-Update `technologies` array (lines 3-14):
+Update the `technologies` array:
 
 ```tsx
 const technologies = [
@@ -220,7 +220,7 @@ Categories: Framework, Library, Language, Styling, Components, Primitives, Tools
 
 Edit `src/components/landing/faq.tsx`:
 
-Update `faqs` array (lines 6-55):
+Update the `faqs` array:
 
 ```tsx
 const faqs = [
@@ -254,20 +254,20 @@ Edit `src/components/landing/cta.tsx`:
 <Button>Get Started</Button>
 
 // Command
-<span>bunx create-next-landing my-app</span>
+<span>bunx degit nimbuslab/create-next-landing my-app</span>
 ```
 
 ### Footer
 
 Edit `src/components/landing/footer.tsx`:
 
-Update links (lines 41-90):
+Update the navigation links:
 
 ```tsx
 <a href="#your-section">Your Link</a>
 ```
 
-Social links (lines 33-38):
+Social links:
 ```tsx
 <a href="https://github.com/yourusername">
 <a href="https://twitter.com/yourusername">

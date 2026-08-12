@@ -71,7 +71,7 @@ const navigation = [
 <Button variant="outline">View on GitHub</Button>
 
 // Command
-<code>bunx create-next-landing my-app</code>
+<code>bunx degit nimbuslab/create-next-landing my-app</code>
 ```
 
 **Styling:**
@@ -295,7 +295,7 @@ const faqs = [
 <Button variant="outline">View on GitHub</Button>
 
 // Command
-<code>bunx create-next-landing my-app</code>
+<code>bunx degit nimbuslab/create-next-landing my-app</code>
 
 // Social proof
 <span>Free and open source • MIT License</span>
