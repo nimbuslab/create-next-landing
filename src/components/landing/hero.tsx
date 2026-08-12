@@ -6,7 +6,7 @@ import { useState } from "react";
 
 export function Hero() {
   const [copied, setCopied] = useState(false);
-  const command = "bunx create-next-landing my-app";
+  const command = "bunx degit nimbuslab/create-next-landing my-app";
 
   const handleCopy = () => {
     navigator.clipboard.writeText(command);

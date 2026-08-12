@@ -12,10 +12,7 @@ const technologies = [
   { name: "Bun", category: "Runtime" },
   { name: "Turbopack", category: "Bundler" },
   { name: "ESLint", category: "Linting" },
-  { name: "Prettier", category: "Formatting" },
 ];
-
-const categories = ["Framework", "Library", "Language", "Styling", "Components", "Primitives"];
 
 export function TechStack() {
   return (

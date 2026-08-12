@@ -103,9 +103,10 @@ async function main() {
   console.log();
   console.log(pc.bold("Next steps:"));
   console.log();
-  console.log(`  ${pc.cyan("bun")} dev       Start development server`);
-  console.log(`  ${pc.cyan("bun")} build     Production build`);
-  console.log(`  ${pc.cyan("bun")} lint      Run ESLint`);
+  console.log(`  ${pc.cyan("bun run")} dev        Start development server`);
+  console.log(`  ${pc.cyan("bun run")} build      Production build`);
+  console.log(`  ${pc.cyan("bun run")} lint       Run ESLint`);
+  console.log(`  ${pc.cyan("bun run")} typecheck  Run TypeScript compiler check`);
   console.log();
 }
 
