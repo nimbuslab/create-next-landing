@@ -62,7 +62,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Tech Stack Section**
   - Technologies organized by category
   - Interactive badge components
-  - 12+ technologies listed
+  - 11 technologies listed
   - Categories: Framework, Library, Language, Styling, Components, Primitives
 
 - **FAQ Section**

@@ -21,7 +21,7 @@ React 19, Tailwind CSS 4, shadcn/ui e setup interativo que gera documentação p
 ## Por que create-next-landing
 
 - **Nove seções prontas**: header fixo, hero, features, how it works, showcase, tech stack, FAQ, CTA e footer, todas responsivas e com dark mode
-- **Server Components por padrão**: `"use client"` só no header, no FAQ e no seletor de tema
+- **Server Components por padrão**: `"use client"` só nas seções com interação (header, hero, how it works, FAQ e CTA) e nos componentes de tema; features, showcase, tech stack e footer são Server Components
 - **Tailwind CSS 4 nativo**: configuração CSS-first em `src/app/globals.css`, sem `tailwind.config.ts`
 - **shadcn/ui no estilo new-york**: Button, Card e Badge já instalados, prontos para receber o resto do catálogo
 - **Setup interativo**: `bun run setup` renomeia o projeto, define o tema padrão e gera o arquivo de contexto do seu assistente de IA
@@ -101,6 +101,7 @@ Node 20.9 ou superior é o mínimo exigido pelo Next 16.
 ├── .github/workflows/ci.yml     # Typecheck, lint e build
 ├── Dockerfile                   # Build multi-stage com saída standalone
 ├── docs/
+│   ├── README.md                # Este README em inglês
 │   ├── COMPONENTS.md            # Referência dos componentes
 │   └── CUSTOMIZATION.md         # Guia de personalização
 ├── scripts/
